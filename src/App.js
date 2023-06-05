@@ -5,7 +5,7 @@ import Balance from './Components/Balance';
 import Tracker from './Components/Tracker';
 import Histroy from './Components/Histroy';
 import Transaction from './Components/Transaction';
-import { useState } from 'react';
+import { createContext, useState } from 'react';
 const {Title} = Typography
 const style = {
   height:"900px",
@@ -15,26 +15,31 @@ const style = {
   paddingBottom:"2%"
 }
 
-
+const historyContext = createContext()
 
 function App() {
 
-  const [histroy,setHistory] = useState([{
-    "id":1,
-    "name":"cash included",
-    "amount":600
-  }])
-  console.log(histroy)
+  const [expense,setExpense] = useState(0)
+  const [income,setIncome] = useState(0)
+
+  const [history,setHistory] = useState([])
+
+
+ 
   
   return (
     <div style={style}>
       <Title level={1}>Expense Tracker</Title>
-      <Balance/>
-      <Tracker/>
-      <Histroy/>
-      <Transaction/>
+      <historyContext.Provider value={{history,setHistory,expense,setExpense,income,setIncome}}>
+          <Balance/>
+          <Tracker/>
+          <Histroy/>
+          <Transaction/>
+      </historyContext.Provider>
+
     </div>
   );
 }
 
 export default App;
+export {historyContext}
