@@ -1,38 +1,43 @@
-.App {
+.tracker--div{
+  display: inline-block;
+  height: 150px;
+  width: 40%;
+  border-radius: 5px;
   text-align: center;
+ margin-left: 50px;
+ border: 2px solid rgb(163, 163, 163);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.history--card{
+  width: 100%;
+  height: 50px;
+  margin: 0 auto;
+  padding-top: 30px;
+  display: inline-block;
+  border-right: 5px solid green;
+  background-color: rgb(233, 233, 233);
+  box-shadow: 2px 2px rgb(167, 167, 167);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.transaction--cash{
+  width: 20%;
+  display: inline-block;
+  text-align: right;
+
+  height: 100%;
+  padding-right:20px ;
+  font-size: x-large;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.transaction--name{
+  font-size: x-large;
+  width: 70%;
+  display: inline-block;
+  text-align: left;
+ 
+  height: 100%;
+  padding-left:20px ;
 }
